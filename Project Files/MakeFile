@@ -1,0 +1,23 @@
+# Makefile
+# main_menu.c, functions.c, menu_functions.c, database_functions.c, database_menu.c
+# Julianne Elbin
+
+CXX = gcc
+
+main_menu:  main_menu.o functions.o menu_functions.o database_functions.o database_menu.o
+	$(CXX) -o main_menu  main_menu.o functions.o menu_functions.o database_functions.o database_menu.o
+
+main_menu.o:  main_menu.c
+	$(CXX) -c $*.c
+
+functions.o:  functions.c
+	$(CXX) -c $*.c
+
+menu_functions.o: menu_functions.c
+	$(CXX) -c $*.c
+   
+database_functions.o: database_functions.c
+	$(CXX) -c $*.c
+
+database_menu.o: database_menu.c
+	$(CXX) -c $*.c
